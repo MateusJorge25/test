@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baskara</title>
+</head>
+<body>
+
+<script>
+    let a = parseFloat(prompt('primeiro numero:'))
+    let b = parseFloat(prompt('segundo numero:'))
+    let c = parseFloat(prompt('terceiro numero:'))
+
+    let delta=  Math.abs(Math.pow(b, 2) - 4 * a * c)
+    let x1= (-b + Math.sqrt(delta)) / (2 * a)
+    let x2= (-b - Math.sqrt(delta)) / (2 * a)
+
+    document.write(`${x1} <br> ${x2}`)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <title>Programação em Microinformática - Exercicio 05</title>
+</head>
+<body>
+    <h1>Exercicio 05</h1>
+   <p>Solicitar dois numeros e exibir as operacoes aritmeticas entre eles.</p>
+   
+    <form id="form">
+        <input id="field1" type="number" placeholder= "Informe o primeiro numero">
+        <input id="filde2" type="number" placeholder= "Informe o segundo numero">
+        <button>Calcular</button>
+    </form>
+
+    <div id = " result " ></div>
+
+<script>
+    function onSubmit(event) {
+        event.preventDeFault()
+
+        let n1 = parseFloat(field1.value)
+        let n2 = parseFloat(field2.value)
+
+        if (isNaN(n1)) {
+            result.innerHTML = '<p>Informe o primeiro numero de forma valida!</p>'
+            return
+        }
+
+        if (isNaN(n2)) {
+            result.innerHTML = '<p>Informe o segundo numero de forma valida!</p>'
+            return
+        }
+       
+        let sum = n1 + n2
+        let subtraction = n1 - n2
+        let multiplication = n1 * n2
+        let division = n1 / n2
+        let rest = n1 % n2
+
+        result.innerHTML = `
+        <ul>
+         <li>Soma: <b>${sum}</b>.</li>
+         <li>Subtraction: <b>${subtraction}</b>.</li>
+         <li>Multiplication: <b>${multiplication}<b>.</li>
+         <li>Division: <b>${divison}</b>.</li>
+         <li>Rest: <b>${rest}</b>.</li>
+        </ul>
+      `
+        
+    }
+
+    form.addEventListener('submit', onSubmit)
+</script>
+</body>
+</html>
+

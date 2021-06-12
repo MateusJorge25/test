@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <title>Programação em Microinformática - exercicio 07</title>
+</head>
+<body>
+    <h1>Exercicio 07</h1>
+   <p>Escolha um clima</p>
+   
+    <form id="form" novalidate>
+        <select id="field" required>
+            <option value="">Como esta o clima hoje?</option>
+            <option value="sunny">Ensolarado</option>
+            <option value="rainy">Chuvoso</option>
+            <option value="snowing">Nevando</option>
+            <option value="overcast">Nublado</option>
+          </select>
+
+          <button>veja o que acho sobre</button>
+   </form>
+
+    <div id="result"></div>
+
+   <script>
+    function onSubmit(Event) {
+      event.preventDefault()
+
+        let choice = field.value
+
+        field.className = ''
+
+        if (Choice === 'sunny') {
+          result.innerHTML = '<p>Esta bom e ensolarado la fora. Use protetor solar!</p>'
+        } 
+
+        else if (choice === 'rainy') {
+           result.innerHTML = '<p>Chuva caindo la fora. Leve sua sombrinha!</p>' 
+        }
+
+        else if (choice === 'snowing') {
+           result.innerHTML = '<p>Neve caindo la fora. Leve seu agasalho!</p>' 
+        }
+
+        else if (choice === 'overcast') {
+           result.innerHTML = '<p>Nao esta chovendo, porem o tempo esta nublado. Fique esperto!</p>'
+           document.boby.style.backgroundImage = 'url(img/weather-overcast.jpg)'
+        }
+
+        else {
+           result.innerHTML = '<p class="negative">Responda a questao a cima!</p>' 
+           field.className = 'negative'
+           field.focus() 
+        }
+
+    }
+
+    form.addEventListener('submit', onSubmit)
+   </script>
+</body>
+</html>
+
